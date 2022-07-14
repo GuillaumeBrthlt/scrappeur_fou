@@ -1,7 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
 
-# //*[@id="haut-contenu-page"]/article/div[3]/div/dl/dd[4]/ul/li[2]/a
 def get_depute_email(depute_url)
   page = Nokogiri::HTML(URI.open(depute_url))
   page.xpath('//*[@id="haut-contenu-page"]/article/div[3]/div/dl/dd[4]/ul/li[2]/a').text
@@ -26,9 +25,6 @@ end
 page.xpath('//div[contains(@class, "clearfix col-container")] //a').each do |depute|
   list_url << depute['href']
 end
-
-
-
 
  number_of_depute = list_first_name.length - 1
  final_array = []
