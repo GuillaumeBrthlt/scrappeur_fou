@@ -20,7 +20,7 @@ def extract_values
   list_values = []
 
   page.xpath('//*[@id="__next"]/div[1]/div[2]/div/div[1]/div/div[2]/div[3]/div/table/tbody //td[contains(@class, "cmc-table__cell--sort-by__price")]/div/a/span').each do |value|
-    list_values.push(value.text.byteslice(1, 100).gsub(/[,]/, '').to_f)
+    list_values.push(value.text.gsub(/[$,]/, '').to_f)
   end
   return list_values
 end
