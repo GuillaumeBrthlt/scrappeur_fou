@@ -36,3 +36,5 @@ def create_final_array
   end
   return final_array
 end
+
+puts create_final_array
